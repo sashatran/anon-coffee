@@ -37,6 +37,8 @@
 		var checked = $('#anon-status').is(':checked');
 		if(checked) {
 			$('#username').prop('disabled', 'disabled');
+		} else {
+			$('#username').prop('disabled', false);
 		}
 	});
 
