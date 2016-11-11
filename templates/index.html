@@ -15,7 +15,7 @@
 				<div class="row">
 				<div class="entry"> {{entry.entry}} </div>
 				<div class="username"> - {{entry.username}} - </div>
-				<div class="date"> Posted on: {{entry.created.strftime('%m-%d-%y, %H:%m%p')}} </div>
+				<div class="date"> Posted on: {{entry.created.strftime('%m-%d-%y %H:%M')}} </div>
 				<hr>
 			</div>
 			{% endfor %} 
@@ -23,10 +23,10 @@
 	<div class="wrap">
 	<div class="posting">
 		<div class="checkbox"><label style="padding-bottom: 10px"><input id="anon-status" type="checkbox"> I want to be Anon!</label></div>
-		<form class="form-inline" method="post">
+		<form name="form" class="form-inline" method="post">
 			Username: <input id="username" type="text" name="username" value=""> <br>
-			Post: <textarea name="entry" value="" maxlength="140"></textarea> <label class="error">{{error_entry}}</label><br> 
-			<button id="submit" type="submit">Submit </button>
+			Post: <textarea id="stuff" name="entry" value="" maxlength="140"></textarea> <label class="error">{{error_entry}}</label><br> 
+			<button id="btnSubmit" type="submit">Submit </button>
 		</form>
 </div>
 </div>
@@ -41,6 +41,13 @@
 			$('#username').prop('disabled', false);
 		}
 	});
+
+	$("#stuff").keypress(function(e){
+    	if (e.which == 13) {
+        	document.form.submit(); 
+       	}
+});
+
 
 </script>
 </html>
