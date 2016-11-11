@@ -15,7 +15,7 @@ body {
 	color: #FFF;
 }
 .posts {
-	padding-top: 10px;
+	padding-top: 20px;
 }
 
 .row {
@@ -94,8 +94,14 @@ textarea {
 .entry {
 	display: block;
 	color: #1B998B;
+	width: 600px;
 }
 
 .username {
-	color: #ED474A;
+	color: #F47A58;
+}
+
+.error {
+	color: #F47A58;
+}
 }
