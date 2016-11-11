@@ -1,0 +1,101 @@
+
+body {
+	font-size: 16px;
+	font-family: 'Open Sans', sans-serif;
+	background-color: #FFF;
+}
+.header {
+	font-size: 26px;
+	content:'';
+	width: 100%;
+	height: 50px;
+	background-color: #1B998B;
+	padding: 10px;
+	text-align: center;
+	color: #FFF;
+}
+.posts {
+	padding-top: 10px;
+}
+
+.row {
+	padding-left: 30px;
+}
+
+.wrap {
+	padding-left: 20px;
+}
+
+.date {
+	font-size: 11px;
+	color: #9E9E9E;
+}
+
+.posting {
+	padding: 20px;
+	border-radius: 10px;
+	width: 350px;
+	height: 270px;
+	border: 1px solid #CCC;
+	color: #1B998B;
+}
+
+input[type="text"]:disabled {
+    background: #dddddd;
+}
+
+
+.checkbox {
+	display: inline !important;
+}
+
+
+form input, textarea {
+	display: block;
+}
+
+form {
+
+}
+
+input {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	width: 200px;
+	font-size: 15px;
+}
+
+textarea {
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	width: 300px;
+	height: 40px;
+	font-size: 15px;
+	resize: none;
+}
+
+#submit {
+	border: 1px solid #CCC;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #FFF;
+	color: #1B998B;
+	outline: none;
+	margin-top: 12px;
+}
+
+#submit:hover {
+	background-color: #1B998B;
+	color: #FFF;
+	border: none;
+}
+
+.entry {
+	display: block;
+	color: #1B998B;
+}
+
+.username {
+	color: #ED474A;
+}

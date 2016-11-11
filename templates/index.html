@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html> 
+
+	<head>
+		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	</head>
+	<body>
+		<div class="header"> SAY SOMETHING </div>
+		<div class="posts">
+
+			{% for entry in entry %}
+				<div class="row">
+				<div class="entry"> {{entry.entry}} </div>
+				<div class="username"> - {{entry.username}} - </div>
+				<div class="date"> Posted on: {{entry.created.strftime('%m-%d-%y, %H:%m%p')}} </div>
+				<hr>
+			</div>
+			{% endfor %} 
+		</div>
+	<div class="wrap">
+	<div class="posting">
+		<div class="checkbox"><label style="padding-bottom: 10px"><input id="anon-status" type="checkbox"> I want to me Anon!</label></div>
+		<form class="form-inline" method="post">
+			Username: <input id="username" type="text" name="username" value=""> <br>
+			Post: <textarea name="entry" value=""></textarea>{{error_entry}}<br> 
+			<button id="submit" type="submit">Submit </button>
+		</form>
+</div>
+</div>
+</body>
+<script> 
+
+	$('#anon-status').click(function(){
+		var checked = $('#anon-status').is(':checked');
+		if(checked) {
+			$('#username').prop('disabled', 'disabled');
+		}
+	});
+
+</script>
+</html>
