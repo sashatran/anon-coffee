@@ -14,8 +14,19 @@ body {
 	text-align: center;
 	color: #FFF;
 }
+
+.container {
+	position: relative;
+	
+}
+
 .posts {
 	padding-top: 20px;
+	position: absolute;
+  	margin: auto;
+  	top: 200px; bottom: 0;
+  	left: 0; right: 0;
+  	width: 500px; height: 200px;
 }
 
 .row {
@@ -23,7 +34,9 @@ body {
 }
 
 .wrap {
+
 	padding-left: 20px;
+
 }
 
 .date {

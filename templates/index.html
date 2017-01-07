@@ -9,6 +9,7 @@
 	</head>
 	<body>
 		<div class="header"> SAY SOMETHING </div>
+		<div class="container">
 		<div class="posts">
 
 			{% for entry in entry %}
@@ -19,17 +20,18 @@
 				<hr>
 			</div>
 			{% endfor %} 
+		
+	
+		<div class="posting">
+			<div class="checkbox"><label style="padding-bottom: 10px"><input id="anon-status" type="checkbox"> I want to be Anon!</label></div>
+			<form name="form" class="form-inline" method="post">
+				Username: <input id="username" type="text" name="username" value=""> <br>
+				Post: <textarea id="stuff" name="entry" value="" maxlength="140"></textarea> <label class="error">{{error_entry}}</label><br> 
+				<button id="btnSubmit" type="submit">Submit </button>
+			</form>
 		</div>
-	<div class="wrap">
-	<div class="posting">
-		<div class="checkbox"><label style="padding-bottom: 10px"><input id="anon-status" type="checkbox"> I want to be Anon!</label></div>
-		<form name="form" class="form-inline" method="post">
-			Username: <input id="username" type="text" name="username" value=""> <br>
-			Post: <textarea id="stuff" name="entry" value="" maxlength="140"></textarea> <label class="error">{{error_entry}}</label><br> 
-			<button id="btnSubmit" type="submit">Submit </button>
-		</form>
-</div>
-</div>
+	</div>
+	</div>
 </body>
 <script> 
 
