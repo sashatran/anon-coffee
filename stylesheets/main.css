@@ -1,18 +1,80 @@
 
+* {
+	margin: 0;
+	padding: 0;
+}
+
 body {
-	font-size: 16px;
+	font-size: 14px;
 	font-family: 'Open Sans', sans-serif;
 	background-color: #FFF;
 }
+
+#backToTop {
+	position: fixed;
+	bottom: 10px; right: 40px;
+	z-index: 1;
+	width: 100px; height: 32px;
+	text-align: center;
+	line-height: 30px;
+	color: #000;
+	font-size: 14px;
+	cursor: pointer;
+	text-decoration: none;
+	transition: opacity 0.2s ease-out;
+}
+
+#backToTop a {
+	color: #000;
+}
+
+.show {
+	visibility: visible;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+
 .header {
-	font-size: 26px;
-	content:'';
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
 	width: 100%;
 	height: 50px;
 	background-color: #1B998B;
-	padding: 10px;
-	text-align: center;
+	padding: 0 1%;
+}
+
+.left {
 	color: #FFF;
+	letter-spacing: 3px;
+	flex: 1;
+	font-size: 20px;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.right {
+	display: flex;
+	align-items: center;
+	margin-right: 2%;
+}
+
+.right a {
+	font-size: 15px;
+	color: #FFF;
+	margin: 10px;
+	text-decoration:none;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-family: 'PT Sans Narrow', sans-serif;
+	cursor: pointer;
+}
+
+.right a:hover {
+	color: #F5F5F5;
+	text-decoration:  none;
 }
 
 .container {
@@ -20,89 +82,23 @@ body {
 	
 }
 
-.posts {
-	padding-top: 20px;
-	position: absolute;
-  	margin: auto;
-  	top: 200px; bottom: 0;
-  	left: 0; right: 0;
-  	width: 500px; height: 200px;
+hr {
+	border: 0;
+	border-top: 1px solid #E8E8E8;
+	margin: 1em 0;
+	height: 1px;
+}
+.wrapper {
+	display: flex;
+	justify-content: center;
 }
 
-.row {
-	padding-left: 30px;
+.wrapper > div {
+	margin: 5%;
 }
 
-.wrap {
-
-	padding-top: 40px;
-	position: fixed;
-
-}
-
-.date {
-	font-size: 11px;
-	color: #9E9E9E;
-}
-
-.posting {
-	padding: 20px;
-	border-radius: 10px;
-	width: 350px;
-	height: 270px;
-	border: 1px solid #CCC;
-	color: #1B998B;
-}
-
-input[type="text"]:disabled {
-    background: #dddddd;
-}
-
-
-.checkbox {
-	display: inline !important;
-}
-
-
-form input, textarea {
-	display: block;
-}
-
-form {
-
-}
-
-input {
-	border: 1px solid #CCC;
-	border-radius: 5px;
-	width: 200px;
-	font-size: 15px;
-}
-
-textarea {
-	border: 1px solid #CCC;
-	border-radius: 10px;
-	width: 300px;
-	height: 40px;
-	font-size: 15px;
-	resize: none;
-}
-
-#btnSubmit {
-	border: 1px solid #CCC;
-	width: 100px;
-	height: 30px;
-	border-radius: 5px;
-	background-color: #FFF;
-	color: #1B998B;
-	outline: none;
-	margin-top: 12px;
-}
-
-#submit:hover {
-	background-color: #1B998B;
-	color: #FFF;
-	border: none;
+.posts div {
+	margin: 1%;
 }
 
 .entry {
@@ -117,4 +113,106 @@ textarea {
 
 .error {
 	color: #F47A58;
+}
+
+.date {
+	font-size: 11px;
+	color: #9E9E9E;
+	padding: 5px 0;
+}
+
+.posting {
+	padding: 20px;
+	border-radius: 10px;
+	width: 350px;
+	
+	border: 1px solid #CCC;
+	color: #1B998B;
+}
+
+.checkbox {
+	display: inline !important;
+}
+
+.checkbox label {
+	font-size: 12px;
+}
+
+form {
+	display: block;
+	padding: 3% 0;
+}
+
+
+form input, textarea {
+	display: block;
+}
+
+
+input[type="text"] {
+	border: 1px solid #CCC;
+	border-radius: 5px;
+	width: 200px;
+	font-size: 13px;
+	color: #1B998B;
+	outline: none;
+	padding-left: 2%;
+	height: 25px;
+}
+
+
+input[type="text"]:disabled {
+	background: #dddddd;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+	color: #666;
+	opacity: 0.4;
+	font-size: 12px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+	color: #666;
+	opacity: 0.4;
+	font-size: 12px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+	color: #666;
+	opacity: 0.4;
+	font-size: 12px;
+}
+:-moz-placeholder { /* Firefox 18- */
+	color: #666;
+	opacity: 0.4;
+	font-size: 12px;
+}
+
+textarea {
+	border: 1px solid #CCC;
+	border-radius: 10px;
+	width: 300px;
+	height: 40px;
+	font-size: 13px;
+	resize: none;
+	color: #1B998B;
+	padding: 2% 0 0 2%;
+}
+
+textarea:focus, input:focus{
+	outline: none;
+}
+
+#btnSubmit {
+	border: 1px solid #CCC;
+	width: 100px;
+	height: 30px;
+	border-radius: 5px;
+	background-color: #FFF;
+	color: #1B998B;
+	outline: none;
+}
+
+#btnSubmit:hover {
+	background-color: #1B998B;
+	color: #FFF;
+	border: none;
 }

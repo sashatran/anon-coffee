@@ -1,61 +1,87 @@
 <!DOCTYPE html>
 <html> 
 
-	<head>
-		<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	</head>
-	
-	<body>
-		<div class="header"> SAY SOMETHING </div>
-		<div class="row">
-			<div class="col-md-6">
-				<div class="posts">
+<head>
+	<link type="text/css" rel="stylesheet" href="/stylesheets/main.css" />
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=PT+Sans+Narrow" rel="stylesheet">
 
-					{% for entry in entry %}
-						<div class="row">
-							<div class="entry"> {{entry.entry}} </div>
-							<div class="username"> - {{entry.username}} - </div>
-							<div class="date"> Posted on: {{entry.created.strftime('%m-%d-%y %H:%M%p')}} </div>
-							<hr>
-						</div>
-					{% endfor %} 
-				</div>
-			</div>
+</head>
+<title> Talk anonymously </title>
+<body>
+	<a id="backToTop" class="hidden" href="#"> &uarr; </a>
+	<div class="header"> 
+		<div class="left">TALK ANONYMOUSLY </div>
+		<div class="right">
+			<a href="http://sashatran.com/">About Me</a>
+			<a href="https://twitter.com/sa_sha26">Twitter</a>
+			<a href="https://github.com/sashatran"> Github</a>
+		</div>
+	</div>
 
-			<div class="col-md-6">
-				<div class="wrap">
-					<div class="posting">
-						<div class="checkbox"><label style="padding-bottom: 10px">
-							<input id="anon-status" type="checkbox"> I want to be Anon!</label>
-						</div>
-						<form name="form" class="form-inline" method="post">
-							Username: <input id="username" type="text" name="username" value=""> <br>
-							Post: <textarea id="stuff" name="entry" value="" maxlength="140"></textarea> <label class="error">{{error_entry}}</label><br> 
-							<button id="btnSubmit" type="submit">Submit </button>
-						</form>
-					</div>
-				</div>
+	<div class="wrapper">
+		<div class="post-wrapper">
+			<div class="posts">
+				{% for entry in entry %}
+				<div class="entry"> {{entry.entry}} </div>
+				<div class="username"> - {{entry.username}} - </div>
+				<div class="date"> Posted on: {{entry.created.strftime('%m-%d-%y %H:%M%p')}} </div>
+				<hr>
+				{% endfor %} 
 			</div>
 		</div>
-	</body>
+
+		<div class="form-wrapper" id="f-wrap">			
+			<div class="posting">
+				<div class="checkbox">
+					<input id="anon-status" type="checkbox"> 
+					<label for="anon-status"> I want to be Anon!</label>
+				</div>
+				<form name="form" class="form-inline" method="post">
+					<input id="username" type="text" name="username" value="" placeholder="Username"> <br>
+					<textarea id="stuff" name="entry" value="" maxlength="140" placeholder="Type your post here"></textarea> <label class="error">{{error_entry}}</label><br> 
+					<button id="btnSubmit" type="submit">Submit </button>
+				</form>
+			</div>
+			
+		</div>
+	</div>
+</body>
 <script> 
 
-	$('#anon-status').click(function(){
-		var checked = $('#anon-status').is(':checked');
-		if(checked) {
-			$('#username').prop('disabled', 'disabled');
-		} else {
-			$('#username').prop('disabled', false);
-		}
-	});
+$('#anon-status').click(function(){
+	var checked = $('#anon-status').is(':checked');
+	if(checked) {
+		$('#username').prop('disabled', 'disabled');
+	} else {
+		$('#username').prop('disabled', false);
+	}
+});
 
-	$("#stuff").keypress(function(e){
-    	if (e.which == 13) {
-        	document.form.submit(); 
-       	}
+$("#stuff").keypress(function(e){
+	if (e.which == 13) {
+		document.form.submit(); 
+	}
+});
+
+$(window).scroll(function() {
+	$('#backToTop').removeClass('hidden');
+	$('#backToTop').addClass('show');
+});
+
+$('#backToTop').click(function () {
+	$('body').animate({
+		scrollTop: 0
+	}, 1000, function(){
+		$('#backToTop').removeClass('show');
+		$('#backToTop').addClass('hidden');
+	});
+	return false;
+});
+
+$(window).scroll(function(){
+  $("#f-wrap").css({"margin-top": ($(window).scrollTop()) + 60 + "px", "margin-left":($(window).scrollLeft()) + 60 + "px"});
 });
 
 
